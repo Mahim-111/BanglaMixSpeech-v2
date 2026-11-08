@@ -1,0 +1,19 @@
+# Reference dependency list for the shared Conda environment. The launcher does
+# not create or modify environments.
+numpy>=1.26,<2.0
+pandas>=2.0,<3.0
+scipy>=1.10,<2.0
+soundfile>=0.12,<1.0
+tqdm>=4.66,<5
+PyYAML>=6,<7
+yamlargparse==1.31.1
+hyperpyyaml>=1.2,<2
+huggingface-hub>=0.26,<2
+einops>=0.7,<1
+rotary-embedding-torch>=0.8,<1
+librosa>=0.10.2,<0.12
+torchinfo>=1.8,<2
+asteroid==0.7.0
+pesq==0.0.4
+pystoi>=0.4,<1
+mir_eval>=0.8,<1

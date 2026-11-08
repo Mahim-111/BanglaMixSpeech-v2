@@ -1,0 +1,111 @@
+{
+  "bundle_version": "1.1.0",
+  "created_date": "2026-07-30",
+  "default_metric_sample_rate": "reference",
+  "models": [
+    {
+      "benchmark_name": "mossformer2",
+      "speakers": 2,
+      "model_sample_rate": 16000,
+      "backend": "ClearerVoice-Studio",
+      "training_data": "large-scale open and private datasets (per model card)",
+      "source_repository": "https://github.com/modelscope/ClearerVoice-Studio",
+      "source_commit": "6b3774dc79c46ae8bed2a4fa5f706f0ac8c75c61",
+      "checkpoint_repository": "alibabasglab/MossFormer2_SS_16K",
+      "checkpoint_revision": "407cb030cd66340918ebb6c8cc63b18f8592cdbe",
+      "files": [
+        {
+          "path": "checkpoints/MossFormer2_SS_16K/last_best_checkpoint.pt",
+          "size": 670353271,
+          "sha256": "00a3a48bda492db1e829b85dd443f8f43a43039a3e90f1a24962ea9caf14a11a"
+        }
+      ]
+    },
+    {
+      "benchmark_name": "mossformer2",
+      "speakers": 3,
+      "model_sample_rate": 8000,
+      "backend": "MossFormer2 standalone",
+      "training_data": "WSJ0-3mix",
+      "source_repository": "https://github.com/alibabasglab/MossFormer2",
+      "source_commit": "5727f739947605f884da8d7a1448c64f32d37b9d",
+      "checkpoint_repository": "alibabasglab/mossformer2-wsj0mix-3spk",
+      "checkpoint_revision": "692a242d7e83aa8fc63c6a4b18153335a465cc1c",
+      "files": [
+        {
+          "path": "checkpoints/mossformer2-wsj0mix-3spk/pytorch_model.bin",
+          "size": 224571945,
+          "sha256": "4828438bc96a5c7f816e32f9389e20c422555d8c0d06d2c871cf744fadd49f47"
+        }
+      ]
+    },
+    {
+      "benchmark_name": "convtasnet",
+      "speakers": 2,
+      "model_sample_rate": 8000,
+      "backend": "funcwj Conv-TasNet",
+      "training_data": "WSJ0-2mix",
+      "source_repository": "https://github.com/funcwj/conv-tasnet",
+      "source_commit": "f3333b0e3b20a15dfaff2a41e7abdadc0e1ff932",
+      "checkpoint_repository": "repository pretrain/gln.tgz",
+      "checkpoint_revision": "f3333b0e3b20a15dfaff2a41e7abdadc0e1ff932",
+      "files": [
+        {
+          "path": "checkpoints/convtasnet_gln/best.pt.tar",
+          "size": 105216799,
+          "sha256": "5f26d24e1e1da98b1d88533d5e2b60024114f3a44f2b4043b372898fc882d0eb"
+        }
+      ]
+    },
+    {
+      "benchmark_name": "dprnn",
+      "speakers": 2,
+      "model_sample_rate": 8000,
+      "backend": "Asteroid DPRNNTasNet",
+      "training_data": "WHAM! sep_clean",
+      "source_repository": "https://github.com/asteroid-team/asteroid",
+      "source_commit": "package release 0.7.0",
+      "checkpoint_repository": "mpariente/DPRNNTasNet-ks2_WHAM_sepclean",
+      "checkpoint_revision": "548f4f1c9476ed0af6b4bea3403247c71d5d7d46",
+      "files": [
+        {
+          "path": "checkpoints/dprnn-wham-2spk/pytorch_model.bin",
+          "size": 14664381,
+          "sha256": "cc1f1fecf24ea3e486521029dc0e1444686bd4b6fdf9715e7757936cbd9ffdf6"
+        }
+      ]
+    },
+    {
+      "benchmark_name": "sepformer",
+      "speakers": 2,
+      "model_sample_rate": 8000,
+      "backend": "SpeechBrain SepFormer",
+      "training_data": "WSJ0-2mix",
+      "source_repository": "https://github.com/speechbrain/speechbrain",
+      "source_commit": "e5cb1f65b940634215650aa1171e0440d0808123",
+      "checkpoint_repository": "speechbrain/sepformer-wsj02mix",
+      "checkpoint_revision": "3a2826343a10e2d2e8a75f79aeab5ff3a2473531",
+      "files": [
+        {"path": "checkpoints/sepformer-wsj02mix/encoder.ckpt", "size": 17267, "sha256": "3139bb880b29ea77ae8a168b8f2ad6e8eb5c2c0904289676c223d0e93cd2a35d"},
+        {"path": "checkpoints/sepformer-wsj02mix/decoder.ckpt", "size": 17202, "sha256": "abea1a2d41151331b4c36071d1b3205aed940a189721f008b12a703e9c63e7e4"},
+        {"path": "checkpoints/sepformer-wsj02mix/masknet.ckpt", "size": 113108458, "sha256": "57dd5f49bf21c5a2101bb4e46648d05d34d517a59e26f0b06646d0bebe8214c7"}
+      ]
+    },
+    {
+      "benchmark_name": "sepformer",
+      "speakers": 3,
+      "model_sample_rate": 8000,
+      "backend": "SpeechBrain SepFormer",
+      "training_data": "WSJ0-3mix",
+      "source_repository": "https://github.com/speechbrain/speechbrain",
+      "source_commit": "e5cb1f65b940634215650aa1171e0440d0808123",
+      "checkpoint_repository": "speechbrain/sepformer-wsj03mix",
+      "checkpoint_revision": "21e78b44a378092c34fff32ba8e788a73584f474",
+      "files": [
+        {"path": "checkpoints/sepformer-wsj03mix/encoder.ckpt", "size": 17267, "sha256": "afdabc2f213c6391002088c0faade7253f62c1ad910c58b3c42a3147f3421451"},
+        {"path": "checkpoints/sepformer-wsj03mix/decoder.ckpt", "size": 17202, "sha256": "4744290ae39cee1c011bbb33e437ccf7b5b94c6c3b70fef595b6b7d53c32b0b7"},
+        {"path": "checkpoints/sepformer-wsj03mix/masknet.ckpt", "size": 113371626, "sha256": "7c11786f74723c8e7021f6c9769057724c5e6833d1ed0f09fc935adfcb8a0078"}
+      ]
+    }
+  ]
+}

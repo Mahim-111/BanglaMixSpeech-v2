@@ -1,0 +1,74 @@
+version: 1
+
+# This file lives in fine_tuning/configs/. ../.. resolves to the benchmark
+# bundle and ../../../.. resolves to this release's dataset root.
+project_root: ../..
+
+experiment:
+  name: banglamix_paper_two_speaker_reproduction
+  output_root: ../finetune_runs
+  seed: 777
+  # Repeats use seeds 777, 778, ... and always get distinct immutable run IDs.
+  repeats: 1
+
+dataset:
+  root: ../../dataset/BanglaMix
+  splits:
+    train: train
+    valid: validation
+    test: test
+  # "all" discovers uniform_15_100 independently for train/validation and all
+  # four held-out overlap profiles for test.
+  variations: all
+  verify_audio: headers
+  balance_variations: true
+
+training:
+  epochs: 30
+  batch_size: 1
+  learning_rate: 0.00005
+  weight_decay: 0.00001
+  segment_seconds: 4.0
+  validation_segment_seconds: 4.0
+  num_workers: 4
+  gradient_accumulation: 1
+  gradient_clip: 5.0
+  precision: fp16
+  patience: 8
+  lr_patience: 2
+  lr_factor: 0.5
+  min_learning_rate: 0.00000001
+
+models:
+  - name: mossformer2
+    speakers: [2]
+    initial_checkpoint: auto
+    training:
+      batch_size: 1
+      gradient_accumulation: 4
+      # FP16 becomes non-finite after silent-target segments in MossFormer2.
+      precision: bf16
+
+  - name: convtasnet
+    speakers: [2]
+    initial_checkpoint: auto
+    training:
+      batch_size: 8
+
+  - name: dprnn
+    speakers: [2]
+    initial_checkpoint: auto
+    training:
+      batch_size: 3
+
+  - name: sepformer
+    speakers: [2]
+    initial_checkpoint: auto
+    training:
+      batch_size: 1
+      gradient_accumulation: 1
+
+# An empty grid produces one run per model/speaker pair. Add dotted training
+# keys here to create a Cartesian-product sweep.
+sweep:
+  grid: {}

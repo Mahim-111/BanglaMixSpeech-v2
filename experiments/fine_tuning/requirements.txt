@@ -1,0 +1,16 @@
+# Core orchestration and common PyTorch backends
+PyYAML
+numpy
+torch
+torchaudio
+soundfile
+scipy
+tensorboard
+tqdm
+
+# Model-specific dependencies already used by the benchmark repositories
+asteroid-filterbanks
+asteroid
+speechbrain
+hyperpyyaml
+huggingface_hub
